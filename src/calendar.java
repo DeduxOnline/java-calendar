@@ -27,14 +27,14 @@ public class calendar {
         int monthN = Month.of(month).maxLength();
         LocalDate date = LocalDate.of(year, month, 1);
         DayOfWeek days = date.getDayOfWeek();
-        k = switch (days) {
-            case MONDAY -> 0;
-            case TUESDAY -> 1;
-            case WEDNESDAY -> 2;
-            case THURSDAY -> 3;
-            case FRIDAY -> 4;
-            case SATURDAY -> 5;
-            default -> 6;
+        switch (days) {
+            case MONDAY : k=0; break;
+            case TUESDAY : k=1; break;
+            case WEDNESDAY : k=2; break;
+            case THURSDAY : k=3; break;
+            case FRIDAY : k=4; break;
+            case SATURDAY : k=5; break;
+            default : k=6; break;
         };
         while (monthN > d - 1) {
             if (k > 6) {
